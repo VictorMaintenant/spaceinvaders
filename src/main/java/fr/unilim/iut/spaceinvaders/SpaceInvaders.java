@@ -60,4 +60,9 @@ public void positionnerUnNouveauVaisseau(int x, int y) {
 	private boolean aUnVaisseau() {
 		return vaisseau != null;
 	}
+
+	public void deplacerVaisseauVersLaDroite() {
+		if (vaisseau.abscisse()< (longueur-1)) vaisseau.seDeplacerVersLaDroite();
+		
+	}
 }
