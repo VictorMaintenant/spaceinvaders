@@ -8,5 +8,4 @@ class HorsEspaceJeuException extends RuntimeException {
 	    super(message);
     }
 
-    
 }
