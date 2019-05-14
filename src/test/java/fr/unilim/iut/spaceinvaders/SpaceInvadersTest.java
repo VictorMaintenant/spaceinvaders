@@ -238,19 +238,10 @@ public class SpaceInvadersTest {
 				+ "...............\n" + "...............\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
 	
-	@Test
-	public void test_EnvahisseurAvanceAutomatiquement_Droite() {
-
-		spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimensions(7, 2), new Position(5, 1), 3);
-		spaceinvaders.deplacerEnvahisseur();
-
-		assertEquals("" + "........EEEEEEE\n" + "........EEEEEEE\n" + "...............\n" + "...............\n"
-				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
-				+ "...............\n" + "...............\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
-	}
+	
 	
 	@Test
-	public void test_EnvahisseurAvanceAutomatiquement_Gauche() {
+	public void test_EnvahisseurAvanceAutomatiquement() {
 
 		spaceinvaders.positionnerUnNouveauEnvahisseur(new Dimensions(7, 2), new Position(5, 1), 3);
 		spaceinvaders.deplacerEnvahisseur();
