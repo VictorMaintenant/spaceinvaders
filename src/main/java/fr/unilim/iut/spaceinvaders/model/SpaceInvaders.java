@@ -13,6 +13,7 @@ public class SpaceInvaders implements Jeu {
 	Vaisseau vaisseau;
 	Missile missile;
 	Envahisseur envahisseur;
+	Collision collision;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -62,7 +63,7 @@ public class SpaceInvaders implements Jeu {
 	}
 
 	private boolean aUnMissileQuiOccupeLaPosition(int x, int y) {
-		return this.aUnMissile() && vaisseau.occupeLaPosition(x, y);
+		return this.aUnMissile() && missile.occupeLaPosition(x, y);
 	}
 
 	public boolean aUnMissile() {
@@ -232,5 +233,21 @@ public class SpaceInvaders implements Jeu {
 
 	public Envahisseur recupererEnvahisseur() {
 		return this.envahisseur;
+	}
+
+	public void détecterCollision() {
+		if(aUnMissile() && aUnEnvahisseur()) {
+			if(missile.ordonneeLaPlusBasse() == envahisseur.ordonneeLaPlusHaute()) {
+				if(missileSurPositionEnvahissuer()) {
+					collision.setTouche(true);
+				}
+			}
+		}
+		
+	}
+
+	private boolean missileSurPositionEnvahissuer() {
+		return missile.abscisseLaPlusADroite()<=envahisseur.abscisseLaPlusADroite() && missile.abscisseLaPlusADroite()>=envahisseur.abscisseLaPlusAGauche() 
+				|| missile.abscisseLaPlusAGauche()<=envahisseur.abscisseLaPlusADroite() && missile.abscisseLaPlusAGauche()>=envahisseur.abscisseLaPlusAGauche();
 	}	
 }

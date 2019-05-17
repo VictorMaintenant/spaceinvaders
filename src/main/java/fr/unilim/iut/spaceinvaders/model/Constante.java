@@ -20,8 +20,8 @@ public class Constante {
 	   public static final char MARQUE_MISSILE = 'M';
 	   
 	   public static final int MISSILE_LONGUEUR = 10;
-	   public static final int MISSILE_HAUTEUR = 10;
-	   public static final int MISSILE_VITESSE = 20;
+	   public static final int MISSILE_HAUTEUR = 20;
+	   public static final int MISSILE_VITESSE = 25;
 	   
 	   public static final String DROITE = "droite";
 	   public static final String GAUCHE= "gauche";
