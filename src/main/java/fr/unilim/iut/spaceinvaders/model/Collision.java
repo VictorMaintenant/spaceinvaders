@@ -20,8 +20,15 @@ public class Collision {
 	}
 
 	public static boolean sprite1DansSprite2(Sprite sprite1, Sprite sprite2) {
-		return sprite1HauteurSprite2(sprite1,sprite2) && (droiteSprite1DansSprite2(sprite1, sprite2)
-				|| sprite1HauteurSprite2(sprite1,sprite2) && gaucheSprite1DansSprite2(sprite1, sprite2));
+		return touchertAGauche(sprite1, sprite2) || toucherADroite(sprite1, sprite2);
+	}
+
+	private static boolean toucherADroite(Sprite sprite1, Sprite sprite2) {
+		return sprite1HauteurSprite2(sprite1,sprite2) && gaucheSprite1DansSprite2(sprite1, sprite2);
+	}
+
+	private static boolean touchertAGauche(Sprite sprite1, Sprite sprite2) {
+		return sprite1HauteurSprite2(sprite1,sprite2) && droiteSprite1DansSprite2(sprite1, sprite2);
 	}
 
 	public static boolean gaucheSprite1DansSprite2(Sprite sprite1, Sprite sprite2) {

@@ -30,7 +30,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 		
-		 assertEquals(true, Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		 assertEquals(true, Collision.detecterCollision(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	@Test
 	public void test_détectionColisionMissileHauteurEnvahisseur() {
@@ -41,7 +41,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(true, Collision.sprite1HauteurSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.sprite1HauteurSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(true, Collision.sprite1DansSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.sprite1DansSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 	@Test
@@ -65,7 +65,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(true, Collision.droiteSprite1DansSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.droiteSprite1DansSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 	@Test
@@ -77,7 +77,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(true, Collision.gaucheSprite1DansSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.gaucheSprite1DansSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 	@Test
@@ -89,7 +89,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(false, Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(false, Collision.detecterCollision(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 	@Test
@@ -101,7 +101,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerMissile();
 	
-		assertEquals(false, Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(false, Collision.detecterCollision(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 
 	@Test
@@ -114,7 +114,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerEnvahisseurVersLaGauche();
 	
-		assertEquals(true, Collision.droiteSprite1DansSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.droiteSprite1DansSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 	@Test
@@ -127,7 +127,7 @@ public class CollisionTest {
 		spaceinvaders.deplacerMissile();
 		spaceinvaders.deplacerEnvahisseurVersLaDroite();
 	
-		assertEquals(true, Collision.gaucheSprite1DansSprite2(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()));
+		assertEquals(true, Collision.gaucheSprite1DansSprite2(spaceinvaders.recupererMissile().get(0), spaceinvaders.recupererEnvahisseur()));
 	}
 	
 }
