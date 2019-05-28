@@ -27,18 +27,17 @@ public void dessiner(BufferedImage im) {
 			this.dessinerUnMissile(missile, im);
 		}
 		if (this.jeu.aUnEnvahisseur()) {
-			Envahisseur envahisseur = this.jeu.recupererEnvahisseur();
+			List<Envahisseur> envahisseur = this.jeu.recupererEnvahisseur();
 			this.dessinerUnEnvahisseur(envahisseur, im);
 		}
 	}
 
 
-	private void dessinerUnEnvahisseur(Envahisseur envahisseur, BufferedImage im) {
+	private void dessinerUnEnvahisseur(List<Envahisseur> envahisseur, BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 
 		crayon.setColor(Color.red);
-		crayon.fillRect(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusBasse(), envahisseur.longueur(),
-				envahisseur.hauteur());
+		envahisseur.forEach(i -> crayon.fillRect(i.abscisseLaPlusAGauche(),i.ordonneeLaPlusBasse(), i.longueur(), i.hauteur()));
 		
 	}
 

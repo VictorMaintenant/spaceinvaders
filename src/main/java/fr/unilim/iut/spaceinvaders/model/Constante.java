@@ -22,7 +22,7 @@ public class Constante {
 	   public static final int MISSILE_LONGUEUR = 10;
 	   public static final int MISSILE_HAUTEUR = 20;
 	   public static final int MISSILE_VITESSE = 30;
-	   public static final int Missile_Espace = 200;
+	   public static final int Missile_Espace = 150;
 	   
 	   public static final String DROITE = "droite";
 	   public static final String GAUCHE= "gauche";
