@@ -6,7 +6,6 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.Before;
 
-import fr.unilim.iut.spaceinvaders.model.Collision;
 import fr.unilim.iut.spaceinvaders.model.Dimensions;
 import fr.unilim.iut.spaceinvaders.model.Position;
 import fr.unilim.iut.spaceinvaders.utils.*;
@@ -29,7 +28,7 @@ public class SpaceInvadersTest {
 	public void test_MissileDisparait_QuandIlCommenceASortirDeEspaceJeu() {
 
 		spaceinvaders.positionnerUnNouveauVaisseau(new Dimensions(7, 2), new Position(5, 9), 1);
-		spaceinvaders.tirerUnMissile(new Dimensions(3, 2), 1);
+		spaceinvaders.tirerUnMissile(new Dimensions(3, 2), 2);
 		for (int i = 1; i <= 6; i++) {
 			spaceinvaders.deplacerMissile();
 		}

@@ -1,16 +1,6 @@
 package fr.unilim.iut.spaceinvaders.model;
 
 public class Collision {
-	private Sprite sprite1;
-	private Sprite sprite2;
-	
-	
-	
-	public Collision(Sprite sprite1, Sprite sprite2) {
-		super();
-		this.sprite1 = sprite1;
-		this.sprite2 = sprite2;
-	}
 
 	public static boolean detecterCollision(Sprite sprite1, Sprite sprite2) {
 		if (sprite1DansSprite2(sprite1, sprite2)) {

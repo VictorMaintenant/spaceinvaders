@@ -3,6 +3,7 @@ package fr.unilim.iut.spaceinvaders.model;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 import fr.unilim.iut.spaceinvaders.moteurjeu.DessinJeu;
 
@@ -14,21 +15,23 @@ public class DessinSpaceInvaders implements DessinJeu {
 		this.jeu = spaceInvaders;
 	}
 
-	public void dessiner(BufferedImage im) {
+public void dessiner(BufferedImage im) {
+		 
+		
 		if (this.jeu.aUnVaisseau()) {
 			Vaisseau vaisseau = this.jeu.recupererVaisseau();
 			this.dessinerUnVaisseau(vaisseau, im);
 		}
 		if (this.jeu.aUnMissile()) {
-			for (int i = 0; i < this.jeu.missiles.size(); i++) {
-				this.dessinerUnMissile(this.jeu.missiles.get(i), im);
-				}
+			List<Missile> missile = this.jeu.recupererMissile();
+			this.dessinerUnMissile(missile, im);
 		}
 		if (this.jeu.aUnEnvahisseur()) {
 			Envahisseur envahisseur = this.jeu.recupererEnvahisseur();
 			this.dessinerUnEnvahisseur(envahisseur, im);
 		}
 	}
+
 
 	private void dessinerUnEnvahisseur(Envahisseur envahisseur, BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
@@ -48,12 +51,11 @@ public class DessinSpaceInvaders implements DessinJeu {
 
 	}
 	
-	private void dessinerUnMissile(Missile missile, BufferedImage im) {
+	private void dessinerUnMissile(List<Missile> missile, BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		
 		crayon.setColor(Color.blue);
-		crayon.fillRect(missile.abscisseLaPlusAGauche(),missile.ordonneeLaPlusBasse(), missile.longueur(), missile.hauteur());
-		
+		missile.forEach(i -> crayon.fillRect(i.abscisseLaPlusAGauche(),i.ordonneeLaPlusBasse(), i.longueur(), i.hauteur()));
 	}
 
 }

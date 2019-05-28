@@ -21,7 +21,7 @@ public class SpaceInvaders implements Jeu {
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
 		this.hauteur = hauteur;
-		this.missiles = new ArrayList();
+		this.missiles = new ArrayList<Missile>();
 	}
 
 	public void initialiserJeu() {
@@ -77,7 +77,7 @@ public class SpaceInvaders implements Jeu {
 	}
 
 	public boolean aUnMissile() {
-		return missiles != null;
+		return !missiles.isEmpty();
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
@@ -143,7 +143,7 @@ public class SpaceInvaders implements Jeu {
 		if (commandeUser.droite) {
 			deplacerVaisseauVersLaDroite();
 		}
-		if (commandeUser.tir && !this.aUnMissile()) {
+		if (commandeUser.tir ) {
 			tirerUnMissile(new Dimensions(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
 		}
@@ -163,7 +163,7 @@ public class SpaceInvaders implements Jeu {
 		if (this.aUnMissile()) {
 			boolean res = false;
 			for (int i = 0; i < this.missiles.size(); i++) {
-				if (collision.detecterCollision(missiles.get(i), envahisseur)) {
+				if (Collision.detecterCollision(missiles.get(i), envahisseur)) {
 					res = true;
 				}
 			}
